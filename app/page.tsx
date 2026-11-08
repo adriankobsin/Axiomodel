@@ -44,6 +44,10 @@ export default async function Home() {
             </Link>
           ))}
         </div>
+        <div className="flex flex-wrap gap-3">
+          <Link href="/playground" className="rounded-lg bg-gradient-to-r from-cyan to-violet text-void font-medium px-5 py-3">Chat with free models now →</Link>
+          <Link href="/leaderboard" className="rounded-lg border border-line-2 px-5 py-3 text-dim hover:text-ink hover:border-cyan/40">Open the leaderboard</Link>
+        </div>
         <DataBanner catalog={catalog} />
       </section>
 

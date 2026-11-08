@@ -27,14 +27,14 @@ export const PLANS: Plan[] = [
     name: "Explorer",
     tagline: "Everything public, free forever.",
     prices: { month: 0, year: 0 },
-    features: ["All rankings & leaderboard", "Model profiles & compare", "Public JSON API"],
+    features: ["Chat with every free model", "All rankings & leaderboard", "Model profiles & compare", "Public JSON API"],
   },
   {
     id: "pro",
     name: "Pro",
     tagline: "For builders choosing models every week.",
     prices: { month: 900, year: 9000 },
-    features: ["Everything in Explorer", "Price & ranking change alerts", "CSV export", "Higher API rate limits", "Email support"],
+    features: ["Everything in Explorer", "Chat with paid models (GPT, Claude, Gemini…)", "Far higher daily message limit", "Price & ranking change alerts", "Email support"],
     highlight: true,
   },
   {

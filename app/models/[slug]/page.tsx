@@ -135,7 +135,12 @@ export default async function Page({ params }: { params: Promise<{ slug: string 
           </div>
         </section>
       )}
-      <div>
+      <div className="flex flex-wrap gap-3">
+        {m.outputMods.includes("text") && (
+          <Link href={`/playground?model=${m.slug}`} className="inline-flex items-center gap-2 rounded-lg bg-gradient-to-r from-cyan to-violet text-void font-medium px-4 py-2.5">
+            {m.free ? "Chat with it free →" : "Chat with it →"}
+          </Link>
+        )}
         <Link href={`/compare?m=${m.slug}`} className="inline-flex items-center gap-2 rounded-lg border border-cyan/40 bg-cyan/10 px-4 py-2.5 text-cyan hover:bg-cyan/20">Compare {m.name} with others →</Link>
       </div>
     </div>

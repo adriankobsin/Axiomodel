@@ -25,6 +25,7 @@ export function Logo() {
 }
 
 const NAV = [
+  { href: "/playground", label: "Playground" },
   { href: "/best-models-for", label: "Best for" },
   { href: "/leaderboard", label: "Leaderboard" },
   { href: "/compare", label: "Compare" },
@@ -68,6 +69,7 @@ export function Footer({ catalog }: { catalog?: Catalog }) {
           <div className="hud-label mb-2">System</div>
           <Link href="/methodology" className="block hover:text-ink">Methodology</Link>
           <Link href="/api-docs" className="block hover:text-ink">Free JSON API</Link>
+          <Link href="/status" className="block hover:text-ink">System status</Link>
           {catalog && <p className="font-mono text-xs text-mute">{catalog.models.length} models · {catalog.source} · {new Date(catalog.updatedAt).toUTCString().slice(5, 22)} UTC</p>}
         </div>
       </div>

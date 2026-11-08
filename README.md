@@ -15,6 +15,18 @@ Built with Next.js 15, React 19, TypeScript and Tailwind CSS 4.
 - If OpenRouter can't be reached, the site falls back to clearly labelled **illustrative sample data** (`lib/sample.ts`). It retries the live catalog after 1 minute.
 - Data refreshes hourly (ISR).
 
+## Chat playground (`/playground`)
+
+- Visitors chat with every **free** model with no sign-up. This runs on your one `OPENROUTER_API_KEY`, which reaches every provider (OpenAI, Anthropic, Google, Meta, Mistral, DeepSeek and others).
+- **Paid** models are open to Pro subscribers (charged to your OpenRouter credit) or to visitors who paste their **own** OpenRouter key. A visitor's own key is kept in their browser only and never stored on the server.
+- Per-visitor daily caps: `FREE_DAILY_MESSAGES` (default 20) and `PRO_DAILY_MESSAGES` (default 300). The counter is in memory. For production, move it to Redis or Supabase.
+- OpenRouter limits free-model use **for your whole account**: 20 requests a minute, and 50 a day until you have bought $10 of credit once, then 1,000 a day. All your visitors share this, so buy the $10 once before launch. Set a credit limit on the key to cap what Pro chats can cost you.
+- If a free model is busy, the request falls back to `openrouter/free` automatically.
+
+## Key check (`/status`)
+
+`/status` tests every key live. For OpenRouter it validates the key **and** sends one tiny real request to a free model. It also checks Stripe (and whether the webhook secret is set), Artificial Analysis, and the public catalog. `/api/status?token=STATUS_TOKEN` also shows usage and credit figures.
+
 ## Run locally
 
 ```bash
