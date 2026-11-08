@@ -30,6 +30,7 @@ const NAV = [
   { href: "/compare", label: "Compare" },
   { href: "/makers", label: "Makers" },
   { href: "/api-docs", label: "API" },
+  { href: "/pricing", label: "Pricing" },
 ];
 
 export function SiteNav() {
